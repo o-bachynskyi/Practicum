@@ -1,0 +1,19 @@
+#include <stdio.h>
+
+int main()
+{
+    int t1, t2, t3; // оголошення змінних
+    while (1) // створення циклу
+    {
+        printf("\nType in 3 numbers less then 10000:\n");
+        scanf("\n%d %d %d", &t1, &t2, &t3); // зчитування даних з клавіатури
+        if (t1 > 10000 || t2 > 10000 || t3 > 10000) {
+            printf("Numbers can`t be over 10000.\n"); // перевірка введених даних
+            continue;
+        }
+        float t = (t1 + t2 + t3) / 3.0; // обчислення часу
+        printf("\nGuests will eat the pie in %.2f hours\n", t); // виведення результату
+        break; // вихід з циклу
+    }
+    return 0;
+}
