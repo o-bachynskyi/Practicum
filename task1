@@ -7,8 +7,8 @@ int main()
     {
         printf("\nType in 3 numbers less then 10000:\n");
         scanf("\n%d %d %d", &t1, &t2, &t3); // зчитування даних з клавіатури
-        if (t1 > 10000 || t2 > 10000 || t3 > 10000) {
-            printf("Numbers can`t be over 10000.\n"); // перевірка введених даних
+        if (t1 > 10000 || t2 > 10000 || t3 > 10000) { // перевірка введених даних
+            printf("Numbers can`t be over 10000.\n"); 
             continue;
         }
         float t = (t1 + t2 + t3) / 3.0; // обчислення часу
