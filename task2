@@ -1,0 +1,39 @@
+#include <stdio.h>
+
+int main()
+{
+    int p; // оголошення змінної
+    while (1) // створення циклу
+    {
+        printf("\nType the amount of numbers from 2 to 20: \n");
+        scanf("%d", &p); // введення кількості чисел з клавіатури
+        if (p < 2 || p > 20) // перевірка кількості чисел
+        {
+            printf("The amount of numbers must be from 2 to 20.\n");
+            continue; // повторення циклу при неправильній кількості чисел
+        }
+        int numbers[p]; // оголошення масиву
+        printf("\nType in %d numbers: \n", p);
+        for (int i = 0; i < p; i++)
+        {
+            scanf("%d", &numbers[i]); // введення чисел для масиву з клавіатури
+        }
+        int nsk = numbers[0]; // оголошення змінної за першим значенням масиву numbers
+        for (int i = 1; i < p; i++)
+        {
+            int a = nsk;
+            int b = numbers[i];
+            while (a != b) // алгоритм Евкліда
+            {
+                if (a > b)
+                    a -= b;
+                else
+                    b -= a;
+            }
+            nsk = (nsk * numbers[i]) / a; // розрахунок НСК
+        }
+        printf("\nNSK = %d\n\n", nsk); // виведення результату
+        break; // вихід з циклу
+    }
+    return 0;
+}
