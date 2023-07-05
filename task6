@@ -1,0 +1,15 @@
+#include <stdio.h>
+#include <math.h>
+
+int main()
+{
+    int x1, y1, x2, y2; // оголошення змінних для координат
+    float result; // оголошення змінної для довжини
+    
+    printf("\nType in 4 coordinates of the vector: \n");
+    scanf("%d %d %d %d", &x1, &y1, &x2, &y2); // зчитування координат з клавіатури
+    
+    result = sqrt(pow(x2-x1, 2) + pow(y2-y1, 2)); // розрахунок довжини
+    printf("\nThe length of the vector is %.6f\n", result); // виведення результату
+    return 0;
+}
