@@ -1,0 +1,27 @@
+#include <stdio.h>
+
+int main()
+{
+    int n; // оголошення змінної
+    while (1) // створення циклу
+    {
+        printf("\nType in a natural number (1 < n < 150): \n");
+        scanf("%d", &n); // зчитування натурального числа з клавіатури
+        if (n <= 1 || n >= 150) // перевірка даних
+        {
+            printf("\nThe number must be from 1 to 150\n");
+            continue; // повторення циклу при порушенні умови
+        }
+        int amount = 0; // оголошення змінної - лічильника
+        for (int i = 1; i < n; i++) 
+        {
+            if (n % i == n / i) // перевірка чисел, чи є вони рівним дільником до заданого числа n
+            {
+                amount++; // збільшення лічильника 
+            }
+        }
+        printf("\nThe amount of equal divisors of %d is %d\n", n, amount); // виведення результату
+        break; // вихід з циклу
+    }
+    return 0;
+}
